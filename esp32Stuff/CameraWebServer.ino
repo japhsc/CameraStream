@@ -7,16 +7,23 @@
 //
 
 // Select camera model
-#define CAMERA_MODEL_WROVER_KIT
+// #define CAMERA_MODEL_WROVER_KIT
 //#define CAMERA_MODEL_ESP_EYE
 //#define CAMERA_MODEL_M5STACK_PSRAM
 //#define CAMERA_MODEL_M5STACK_WIDE
-//#define CAMERA_MODEL_AI_THINKER
+#define CAMERA_MODEL_AI_THINKER
+
+// flash lamp IO
+#define LAMP 4
+// setting PWM properties
+const int freq = 5000;
+const int ledChannel = 15;
+const int ledBitResolution = 8;
 
 #include "camera_pins.h"
 
-const char *ssid = "*********";
-const char *password = "*********";
+const char *ssid = "Incubator";
+const char *password = "Fl4mongo";
 
 void startCameraServer();
 
@@ -24,6 +31,10 @@ void setup() {
   Serial.begin(115200);
   Serial.setDebugOutput(true);
   Serial.println();
+
+  ledcSetup(ledChannel, freq, ledBitResolution);
+  ledcAttachPin(LAMP, ledChannel);
+  ledcWrite(ledChannel, 6);
 
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
