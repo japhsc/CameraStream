@@ -3,4 +3,4 @@ doc
 archive
 .vscode
 *.code-workspace
-
+.idea
