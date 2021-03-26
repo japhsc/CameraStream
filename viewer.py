@@ -1,6 +1,7 @@
 import cv2
 
-class viewer(object):
+
+class viewer:
 	def __init__(self, title='Frame'):
 		self.title = title
 		

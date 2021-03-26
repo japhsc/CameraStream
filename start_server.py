@@ -1,6 +1,7 @@
 import time
 from stream import stream_server, stream_stack, grayscale, unity
-from cam import VideoStream
+# from cam import VideoStream
+from cam import webcam
 
 #framerate = 32
 framerate = 46
@@ -9,7 +10,11 @@ framerate = 46
 resolution = (320, 240)
 video_format = 'bgr'
 
-vs = VideoStream(	resolution=resolution, \
+# vs = VideoStream(	resolution=resolution, \
+# 					video_format=video_format, \
+# 					framerate=framerate)
+					
+vs = webcam(resolution=resolution, \
 					video_format=video_format, \
 					framerate=framerate)
 
@@ -17,8 +22,8 @@ vs.flip(False, True)
 vs.info()
 
 server = stream_server()
-#stack = stream_stack(server, process=grayscale)
-#stack = stream_stack(server, process=unity)
+# stack = stream_stack(server, process=grayscale)
+# stack = stream_stack(server, process=unity)
 stack = stream_stack(server)
 
 print('Start cam stream')

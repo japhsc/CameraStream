@@ -71,10 +71,12 @@ class stream_client(object):
 import numpy as np
 from utils import bytes_to_rgb, bgr_weights
 
+
 def unity(data):
 	data['type'] = 'bgr'
 	return pack(data)
-	
+
+
 def grayscale(data):
 	data['data'] = np.uint8(np.dot(bytes_to_rgb(data['data'], data['size']), bgr_weights))
 	data['size'] = data['data'].shape
@@ -82,6 +84,7 @@ def grayscale(data):
 	data['type'] = 'grayscale'
 	
 	return pack(data)
+
 
 class stream_stack(object):
 	def __init__(self, server:stream_server, deque_len=5, process=None):
