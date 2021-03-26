@@ -4,3 +4,4 @@ archive
 .vscode
 *.code-workspace
 .idea
+myenv
