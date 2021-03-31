@@ -22,8 +22,8 @@ const int ledBitResolution = 8;
 
 #include "camera_pins.h"
 
-const char *ssid = "Incubator";
-const char *password = "Fl4mongo";
+const char *ssid = "xxx";
+const char *password = "xxx";
 
 void startCameraServer();
 

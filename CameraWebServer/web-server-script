@@ -1,11 +1,3 @@
-from datetime import datetime
-
-import requests
-import urllib
-import cv2
-import numpy as np
-
-'''
 
 document.addEventListener('DOMContentLoaded', function (event) {
   var baseHost = document.location.origin
@@ -233,24 +225,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
 })
 
         
-'''
+<select id="framesize" class="default-action">
+    <option value="10">UXGA(1600x1200)</option>
+    <option value="9">SXGA(1280x1024)</option>
+    <option value="8">XGA(1024x768)</option>
+    <option value="7">SVGA(800x600)</option>
+    <option value="6">VGA(640x480)</option>
+    <option value="5" selected="selected">CIF(400x296)</option>
+    <option value="4">QVGA(320x240)</option>
+    <option value="3">HQVGA(240x176)</option>
+    <option value="0">QQVGA(160x120)</option>
+</select>
 
-ident = "framesize"
-value = 6
-base_url = "http://192.168.178.46"
-url = f"{base_url}:81/stream"
-timed_url = f"{base_url}/capture?_cb={datetime.now().microsecond}"
-config_url = f"{base_url}/control?var={ident}&val={value}"
-
-resp = urllib.request.urlopen(config_url)
-while True:
-    # resp = urllib.request.urlopen(url)
-    resp = urllib.request.urlopen(timed_url)
-
-    img = np.array(bytearray(resp.read()), dtype=np.uint8)
-    img_dec = cv2.imdecode(img, -1)
-
-    # all the opencv processing is done here
-    cv2.imshow('test', img_dec)
-    if ord('q') == cv2.waitKey(10):
-        exit(0)
