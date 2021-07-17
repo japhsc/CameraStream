@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name shotLib)(type Legacy)(uri ${KIPRJMOD}/shotLib.lib)(options "")(descr ""))
+  (lib (name L298N)(type Legacy)(uri ${KIPRJMOD}/lib/L298N.lib)(options "")(descr ""))
+  (lib (name ESP32-CAM)(type Legacy)(uri ${KIPRJMOD}/lib/ESP32-CAM.lib)(options "")(descr ""))
+)
