@@ -423,11 +423,11 @@ Text GLabel 5950 4350 1    50   Input ~ 0
 Bat+
 Text GLabel 6050 4650 2    50   Input ~ 0
 ESP_ADC_BAT
-Text GLabel 9800 2500 2    50   Input ~ 0
+Text GLabel 10600 2550 2    50   Input ~ 0
 ESP_STNDBY
-Text GLabel 9800 2400 2    50   Input ~ 0
+Text GLabel 8600 2600 0    50   Input ~ 0
 ESP_CHRG
-Text GLabel 9800 2100 2    50   Input ~ 0
+Text GLabel 8600 2500 0    50   Input ~ 0
 ESP_RELAY
 Text GLabel 9800 2000 2    50   Input ~ 0
 ESP_ADC_BAT
@@ -515,4 +515,40 @@ Text GLabel 8400 5050 0    50   Input ~ 0
 H_EN_WEICHE_REV
 Text GLabel 8400 4950 0    50   Input ~ 0
 H_EN_WEICHE_FWD
+$Comp
+L power:Earth #PWR?
+U 1 1 6115C6E3
+P 8300 2000
+F 0 "#PWR?" H 8300 1750 50  0001 C CNN
+F 1 "Earth" H 8300 1850 50  0001 C CNN
+F 2 "" H 8300 2000 50  0001 C CNN
+F 3 "~" H 8300 2000 50  0001 C CNN
+	1    8300 2000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8300 2000 8600 2000
+NoConn ~ 10600 2550
+Text GLabel 9800 2400 2    50   Input ~ 0
+U0R
+Text GLabel 9800 2500 2    50   Input ~ 0
+U0T
+$Comp
+L Switch:SW_MEC_5G SW?
+U 1 1 6116DAEB
+P 10550 2100
+F 0 "SW?" H 10750 2250 50  0000 C CNN
+F 1 "UPLOAD_CODE" H 10950 2150 50  0000 C CNN
+F 2 "" H 10550 2300 50  0001 C CNN
+F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=488" H 10550 2300 50  0001 C CNN
+	1    10550 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 2100 10350 2100
+Wire Wire Line
+	9800 2200 10750 2200
+Wire Wire Line
+	10750 2200 10750 2100
+NoConn ~ 9800 1900
 $EndSCHEMATC
